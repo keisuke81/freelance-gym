@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  toolName: string;
+  relatedArticles?: { title: string; href: string }[];
+}
+
+const { title, description, toolName, relatedArticles = [] } = Astro.props;
+const pageTitle = `${toolName}｜フリーランスジム`;
+const pageDescription = `${description}。会員登録不要・完全無料で今すぐ使えます。`;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <JsonLd
+    type="SoftwareApplication"
+    data={{
+      name: toolName,
+      description: pageDescription,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
+    }}
+    slot="head"
+  />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="mb-8">
+      <a href="/tools/" class="text-sm text-indigo-600 hover:underline">← ツール一覧</a>
+      <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2">{toolName}</h1>
+      <p class="text-gray-500 mt-1">{description}</p>
+    </div>
+
+    <slot />
+
+    {relatedArticles.length > 0 && (
+      <div class="mt-12 border-t border-gray-200 pt-8">
+        <h2 class="text-lg font-bold text-gray-900 mb-4">関連記事</h2>
+        <ul class="space-y-2">
+          {relatedArticles.map(article => (
+            <li>
+              <a href={article.href} class="text-indigo-600 hover:underline text-sm">
+                → {article.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import TaxSimulator from '../../components/tools/TaxSimulator';
+
+const relatedArticles = [
+  { title: 'フリーランスの税金入門｜所得税・住民税・国保の基本', href: '/blog/tax-basics/' },
+  { title: '経費で落とせるもの・落とせないもの完全版', href: '/blog/expense-tips/' },
+];
+---
+
+<ToolLayout
+  title="手取り・税金シミュレーター"
+  description="年間売上と条件を入力するだけで、税金・社会保険料・手取り額をリアルタイム計算します"
+  toolName="手取り・税金シミュレーター"
+  relatedArticles={relatedArticles}
+>
+  <TaxSimulator client:load />
+</ToolLayout>

@@ -1,0 +1,18 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import ExpenseChecker from '../../components/tools/ExpenseChecker';
+
+const relatedArticles = [
+  { title: '経費で落とせるもの・落とせないもの完全版', href: '/blog/expense-tips/' },
+  { title: 'フリーランスの税金入門｜所得税・住民税・国保の基本', href: '/blog/tax-basics/' },
+];
+---
+
+<ToolLayout
+  title="経費判定チェックリスト"
+  description="「これって経費にできる？」をカテゴリ別に○△×で即判定。按分率の目安と根拠も確認できます"
+  toolName="経費判定チェックリスト"
+  relatedArticles={relatedArticles}
+>
+  <ExpenseChecker client:load />
+</ToolLayout>

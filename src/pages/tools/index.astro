@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import ToolCard from '../../components/ui/ToolCard.astro';
+
+const tools = [
+  {
+    title: '請求書ジェネレーター',
+    description: 'フォームを入力するだけでインボイス制度対応の請求書を作成・PDF保存。銀行情報や登録番号にも対応。',
+    href: '/tools/invoice/',
+    emoji: '📄',
+    badge: '無料',
+  },
+  {
+    title: '手取り・税金シミュレーター',
+    description: '年間売上・経費・青色申告の有無などを入力するだけで、所得税・住民税・国保・年金・手取り額をリアルタイム計算。',
+    href: '/tools/tax-simulator/',
+    emoji: '💰',
+    badge: '無料',
+  },
+  {
+    title: '経費判定チェックリスト',
+    description: '「これって経費にできる？」をカテゴリ別に○△×で即判定。按分率の目安と根拠も表示します。',
+    href: '/tools/expense-checker/',
+    emoji: '✅',
+    badge: '無料',
+  },
+];
+---
+
+<BaseLayout
+  title="フリーランス向け無料ツール一覧｜フリーランスジム"
+  description="フリーランス・個人事業主のための無料ツール集。請求書作成、税金シミュレーター、経費判定など、面倒な実務を秒で解決します。"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl font-extrabold text-gray-900 mb-3">無料ツール一覧</h1>
+      <p class="text-gray-500">会員登録不要・データはサーバーに送信されません</p>
+    </div>
+    <div class="space-y-4">
+      {tools.map(tool => (
+        <ToolCard {...tool} />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

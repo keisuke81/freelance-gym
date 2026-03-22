@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import BlogCard from '../../components/ui/BlogCard.astro';
+
+const posts = [
+  {
+    title: 'インボイス制度対応の請求書の書き方【2026年最新】',
+    description: '2023年10月から始まったインボイス制度。適格請求書の書き方と、登録が必要かどうかの判断基準を解説します。',
+    href: '/blog/invoice-guide/',
+    date: '2026-03-20',
+    tags: ['請求書', 'インボイス'],
+  },
+  {
+    title: 'フリーランスの税金入門｜所得税・住民税・国保の基本',
+    description: '会社員と違い、フリーランスは自分で税金を計算・納付する必要があります。基本的な仕組みをわかりやすく解説。',
+    href: '/blog/tax-basics/',
+    date: '2026-03-18',
+    tags: ['税金', '確定申告'],
+  },
+  {
+    title: '経費で落とせるもの・落とせないもの完全版',
+    description: 'フリーランスが経費として計上できる費用の一覧と、判断が難しいグレーゾーンの考え方を解説します。',
+    href: '/blog/expense-tips/',
+    date: '2026-03-15',
+    tags: ['経費', '節税'],
+  },
+];
+---
+
+<BaseLayout
+  title="ブログ｜フリーランスジム"
+  description="フリーランス・個人事業主のための実務情報。請求書の書き方、税金の仕組み、経費の判断基準など役立つ記事を発信しています。"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl font-extrabold text-gray-900 mb-3">ブログ</h1>
+      <p class="text-gray-500">フリーランスの実務に役立つ情報を発信しています</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {posts.map(post => (
+        <BlogCard {...post} />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

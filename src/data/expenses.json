@@ -1,0 +1,290 @@
+[
+  {
+    "category": "交通費",
+    "emoji": "🚃",
+    "items": [
+      {
+        "name": "打ち合わせ・仕事のための電車・バス代",
+        "verdict": "ok",
+        "explanation": "仕事に直接関連する移動費は全額経費にできます。領収書またはSuicaの履歴を保管しましょう。",
+        "ratio": null
+      },
+      {
+        "name": "タクシー代（深夜・急ぎの場合）",
+        "verdict": "ok",
+        "explanation": "仕事上の緊急移動や深夜帰宅（仕事が原因）は経費になります。理由をメモしておくと安心です。",
+        "ratio": null
+      },
+      {
+        "name": "新幹線・飛行機（出張）",
+        "verdict": "ok",
+        "explanation": "仕事目的の出張旅費は全額経費です。グリーン車も業務上必要な場合は認められることがあります。",
+        "ratio": null
+      },
+      {
+        "name": "プライベートの旅行・帰省",
+        "verdict": "ng",
+        "explanation": "仕事と関係ない移動は経費になりません。旅行先でたまたま仕事をしても、主目的がプライベートであれば不可。",
+        "ratio": null
+      },
+      {
+        "name": "自動車（仕事とプライベート兼用）",
+        "verdict": "partial",
+        "explanation": "仕事に使った割合（走行距離）で按分できます。走行距離記録をつけておきましょう。",
+        "ratio": "業務走行距離 ÷ 総走行距離"
+      }
+    ]
+  },
+  {
+    "category": "通信費",
+    "emoji": "📱",
+    "items": [
+      {
+        "name": "仕事専用スマートフォンの通信費",
+        "verdict": "ok",
+        "explanation": "仕事専用であれば全額経費です。",
+        "ratio": null
+      },
+      {
+        "name": "プライベートと兼用のスマートフォン",
+        "verdict": "partial",
+        "explanation": "仕事に使う割合で按分します。一般的に50〜80%が認められることが多いです。",
+        "ratio": "使用実態に応じて50〜80%が目安"
+      },
+      {
+        "name": "自宅のインターネット回線",
+        "verdict": "partial",
+        "explanation": "自宅兼オフィスの場合は業務使用割合で按分できます。",
+        "ratio": "業務使用割合（一般的に50〜60%）"
+      },
+      {
+        "name": "仕事用サブスクリプション（Slack, Zoom等）",
+        "verdict": "ok",
+        "explanation": "仕事に使うツールのサブスクリプション費用は全額経費です。",
+        "ratio": null
+      }
+    ]
+  },
+  {
+    "category": "飲食・交際費",
+    "emoji": "🍽",
+    "items": [
+      {
+        "name": "クライアントとの打ち合わせ飲食代",
+        "verdict": "ok",
+        "explanation": "接待交際費として経費にできます。相手の名前・目的をレシートの裏にメモしておきましょう。",
+        "ratio": null
+      },
+      {
+        "name": "カフェでの仕事中の飲食代",
+        "verdict": "partial",
+        "explanation": "仕事のための場所代として認められる場合があります。ただし常識的な範囲で。領収書と「作業目的」のメモを残しましょう。",
+        "ratio": null
+      },
+      {
+        "name": "自宅での食事・日常の昼食代",
+        "verdict": "ng",
+        "explanation": "日常的な食事は経費になりません。打ち合わせ目的でない限り、食事代は経費として認められません。",
+        "ratio": null
+      },
+      {
+        "name": "同業者との情報交換ランチ",
+        "verdict": "partial",
+        "explanation": "業務上の情報交換であれば経費として認められる場合があります。相手・目的を記録しておきましょう。",
+        "ratio": null
+      }
+    ]
+  },
+  {
+    "category": "家賃・光熱費",
+    "emoji": "🏠",
+    "items": [
+      {
+        "name": "自宅家賃（自宅兼オフィス）",
+        "verdict": "partial",
+        "explanation": "仕事に使っている部屋の面積比率で按分できます。独立した作業スペースがあると認められやすいです。",
+        "ratio": "仕事スペース面積 ÷ 自宅総面積（一般的に20〜50%）"
+      },
+      {
+        "name": "電気代・ガス代（自宅兼オフィス）",
+        "verdict": "partial",
+        "explanation": "家賃と同様の比率か、仕事時間の割合で按分します。",
+        "ratio": "仕事使用割合（家賃比率と同等が一般的）"
+      },
+      {
+        "name": "コワーキングスペース利用料",
+        "verdict": "ok",
+        "explanation": "仕事目的で利用するコワーキングスペースは全額経費です。",
+        "ratio": null
+      },
+      {
+        "name": "賃貸オフィス（仕事専用）",
+        "verdict": "ok",
+        "explanation": "仕事専用の事務所家賃は全額経費です。",
+        "ratio": null
+      }
+    ]
+  },
+  {
+    "category": "書籍・勉強代",
+    "emoji": "📚",
+    "items": [
+      {
+        "name": "仕事に関連する書籍・雑誌",
+        "verdict": "ok",
+        "explanation": "業務に関連する書籍は経費にできます。小説や趣味の本はNGです。",
+        "ratio": null
+      },
+      {
+        "name": "仕事関連のオンライン講座・セミナー",
+        "verdict": "ok",
+        "explanation": "スキルアップのための研修・講座費用は全額経費です。",
+        "ratio": null
+      },
+      {
+        "name": "資格取得費用（業務関連）",
+        "verdict": "partial",
+        "explanation": "現在の業務に関連する資格は経費になります。全く異なる業種への転職目的の場合はNGです。",
+        "ratio": null
+      },
+      {
+        "name": "趣味のための本・習い事",
+        "verdict": "ng",
+        "explanation": "仕事と無関係な自己啓発は経費になりません。",
+        "ratio": null
+      }
+    ]
+  },
+  {
+    "category": "機材・ソフトウェア",
+    "emoji": "💻",
+    "items": [
+      {
+        "name": "仕事用パソコン",
+        "verdict": "ok",
+        "explanation": "10万円未満なら全額経費（消耗品）、10万円以上は減価償却（法定耐用年数4年）が必要です。",
+        "ratio": null
+      },
+      {
+        "name": "仕事用スマートフォン（専用）",
+        "verdict": "ok",
+        "explanation": "仕事専用なら全額経費です。10万円未満であれば消耗品費として一括経費化できます。",
+        "ratio": null
+      },
+      {
+        "name": "Adobe Creative Cloud / Figma 等のサブスク",
+        "verdict": "ok",
+        "explanation": "仕事に使うソフトウェアのサブスクリプションは全額経費です。",
+        "ratio": null
+      },
+      {
+        "name": "ゲーミングPC・高性能機器（一部仕事使用）",
+        "verdict": "partial",
+        "explanation": "仕事使用割合で按分できますが、主にゲームやプライベート用途の場合は認められにくいです。",
+        "ratio": "仕事使用割合"
+      }
+    ]
+  },
+  {
+    "category": "服飾・美容",
+    "emoji": "👔",
+    "items": [
+      {
+        "name": "仕事専用のスーツ・制服",
+        "verdict": "partial",
+        "explanation": "完全に仕事専用で、プライベートでは着用しない場合は経費にできる場合があります。ただし認められにくいジャンルです。",
+        "ratio": null
+      },
+      {
+        "name": "日常着・普段使いの洋服",
+        "verdict": "ng",
+        "explanation": "日常でも着用できる洋服は経費になりません。在宅ワークの部屋着も同様です。",
+        "ratio": null
+      },
+      {
+        "name": "美容院・ヘアカット代",
+        "verdict": "ng",
+        "explanation": "一般的に経費として認められません。芸能・モデル業など、外見が業務に直結する場合を除きます。",
+        "ratio": null
+      },
+      {
+        "name": "YouTubeや配信のための衣装・メイク",
+        "verdict": "partial",
+        "explanation": "配信・動画制作での使用が明確であれば経費として認められる場合があります。プライベートとの分離が重要です。",
+        "ratio": null
+      }
+    ]
+  },
+  {
+    "category": "医療・保険",
+    "emoji": "🏥",
+    "items": [
+      {
+        "name": "国民健康保険料",
+        "verdict": "ok",
+        "explanation": "社会保険料として全額、所得控除（社会保険料控除）の対象になります。経費ではなく控除です。",
+        "ratio": null
+      },
+      {
+        "name": "国民年金",
+        "verdict": "ok",
+        "explanation": "社会保険料として全額、所得控除の対象です。",
+        "ratio": null
+      },
+      {
+        "name": "小規模企業共済",
+        "verdict": "ok",
+        "explanation": "掛金全額が所得控除になります（月最大7万円）。フリーランスの退職金制度として非常に節税効果が高いです。",
+        "ratio": null
+      },
+      {
+        "name": "医療費（日常的な通院）",
+        "verdict": "ng",
+        "explanation": "経費にはなりませんが、年間10万円超の医療費は「医療費控除」として所得控除できます。",
+        "ratio": null
+      },
+      {
+        "name": "生命保険・個人の損害保険",
+        "verdict": "ng",
+        "explanation": "個人の生命保険は経費になりませんが、生命保険料控除として最大12万円の所得控除があります。",
+        "ratio": null
+      }
+    ]
+  },
+  {
+    "category": "その他",
+    "emoji": "📦",
+    "items": [
+      {
+        "name": "仕事用の文房具・消耗品",
+        "verdict": "ok",
+        "explanation": "仕事に使う消耗品は全額経費です。",
+        "ratio": null
+      },
+      {
+        "name": "請求書・名刺などの印刷代",
+        "verdict": "ok",
+        "explanation": "仕事に使う印刷物は全額経費です。",
+        "ratio": null
+      },
+      {
+        "name": "振込手数料・クレジットカード手数料",
+        "verdict": "ok",
+        "explanation": "業務上発生する金融手数料は経費にできます。",
+        "ratio": null
+      },
+      {
+        "name": "クラウド会計ソフト（freee, マネーフォワード等）",
+        "verdict": "ok",
+        "explanation": "業務に使うソフトウェアは全額経費です。",
+        "ratio": null
+      },
+      {
+        "name": "お中元・お歳暮",
+        "verdict": "partial",
+        "explanation": "取引先へのお中元・お歳暮は交際費として経費にできます。ただし一般的に1万円程度までが目安です。",
+        "ratio": null
+      }
+    ]
+  }
+]

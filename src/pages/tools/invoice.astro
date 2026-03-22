@@ -1,0 +1,18 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import InvoiceGenerator from '../../components/tools/InvoiceGenerator';
+
+const relatedArticles = [
+  { title: 'インボイス制度対応の請求書の書き方【2026年最新】', href: '/blog/invoice-guide/' },
+  { title: 'フリーランスの税金入門｜所得税・住民税・国保の基本', href: '/blog/tax-basics/' },
+];
+---
+
+<ToolLayout
+  title="請求書ジェネレーター"
+  description="フォームを入力するだけでインボイス制度対応の請求書を作成・PDF保存できます"
+  toolName="請求書ジェネレーター"
+  relatedArticles={relatedArticles}
+>
+  <InvoiceGenerator client:load />
+</ToolLayout>

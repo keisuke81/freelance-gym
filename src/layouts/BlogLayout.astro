@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: string;
+  tags?: string[];
+  relatedTool?: { name: string; href: string };
+}
+
+const { title, description, date, tags = [], relatedTool } = Astro.props;
+const pageTitle = `${title}｜フリーランスジム`;
+const formattedDate = new Date(date).toLocaleDateString('ja-JP', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={pageTitle} description={description}>
+  <JsonLd
+    type="Article"
+    data={{
+      headline: title,
+      description,
+      datePublished: date,
+      author: { '@type': 'Organization', name: 'フリーランスジム' },
+      publisher: { '@type': 'Organization', name: 'フリーランスジム' },
+    }}
+    slot="head"
+  />
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="mb-8">
+      <a href="/blog/" class="text-sm text-indigo-600 hover:underline">← ブログ一覧</a>
+      <div class="flex flex-wrap gap-2 mt-3">
+        {tags.map(tag => (
+          <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full">{tag}</span>
+        ))}
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-3">{title}</h1>
+      <time class="text-sm text-gray-400 mt-1 block">{formattedDate}</time>
+    </div>
+
+    <article class="prose prose-indigo max-w-none">
+      <slot />
+    </article>
+
+    {relatedTool && (
+      <div class="mt-12 bg-indigo-50 rounded-2xl p-6">
+        <p class="text-sm text-indigo-700 font-medium mb-2">実際に試してみましょう</p>
+        <a
+          href={relatedTool.href}
+          class="inline-flex items-center gap-2 bg-indigo-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors"
+        >
+          {relatedTool.name}を使ってみる →
+        </a>
+      </div>
+    )}
+  </div>
+</BaseLayout>

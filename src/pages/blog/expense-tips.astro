@@ -1,0 +1,93 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="経費で落とせるもの・落とせないもの完全版"
+  description="フリーランスが経費として計上できる費用の一覧と、判断が難しいグレーゾーンの考え方を解説します。"
+  date="2026-03-15"
+  tags={['経費', '節税', '確定申告']}
+  relatedTool={{ name: '経費判定チェックリスト', href: '/tools/expense-checker/' }}
+>
+  <h2>経費にできるものの基本的な考え方</h2>
+  <p>
+    経費として認められるのは、<strong>「事業に関係する支出」</strong>です。
+    税法上は「直接業務に必要な費用」であることが求められます。
+  </p>
+  <p>
+    判断の基準は「それがなければ仕事ができないか？」「仕事のためだけに使うか？」です。
+    プライベートとの兼用の場合は、<strong>按分（あんぶん）</strong>して仕事の割合だけを経費にできます。
+  </p>
+
+  <h2>確実に経費にできるもの</h2>
+  <h3>仕事直結の費用</h3>
+  <ul>
+    <li>仕事専用のPC・周辺機器（10万円未満なら即時全額経費）</li>
+    <li>仕事で使うソフトウェア・サブスクリプション（Adobe CC、Figma等）</li>
+    <li>クラウド会計ソフト（freee、マネーフォワード等）</li>
+    <li>仕事に関連する書籍・専門誌</li>
+    <li>業務に直接関連するセミナー・研修費</li>
+    <li>仕事目的の交通費（電車・バス・タクシー）</li>
+    <li>仕事専用の通信費（スマホ・インターネット）</li>
+    <li>コワーキングスペース利用料</li>
+    <li>名刺・印刷費・事務用品</li>
+    <li>振込手数料・クレジットカード手数料</li>
+  </ul>
+
+  <h2>按分が必要なもの（グレーゾーン）</h2>
+  <p>「仕事でも使うが、プライベートでも使う」ものは、実際の使用割合で按分します。</p>
+
+  <table class="w-full border-collapse text-sm my-4">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-300 px-4 py-2 text-left">費用</th>
+        <th class="border border-gray-300 px-4 py-2 text-left">按分方法の目安</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">自宅家賃</td>
+        <td class="border border-gray-300 px-4 py-2">仕事部屋の面積 ÷ 総面積（一般的に20〜50%）</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">電気代・光熱費</td>
+        <td class="border border-gray-300 px-4 py-2">家賃と同じ按分率</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">兼用スマートフォン</td>
+        <td class="border border-gray-300 px-4 py-2">業務使用割合（50〜80%が目安）</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">自動車</td>
+        <td class="border border-gray-300 px-4 py-2">業務走行距離 ÷ 総走行距離</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>経費にできないもの</h2>
+  <ul>
+    <li>日常的な食事・昼食代（打ち合わせ目的でない場合）</li>
+    <li>プライベートの旅行・帰省費用</li>
+    <li>趣味のための習い事・書籍</li>
+    <li>普段着の洋服・日用品</li>
+    <li>個人の医療費（医療費控除の対象にはなります）</li>
+    <li>家族への給与（青色事業専従者の届出がない場合）</li>
+  </ul>
+
+  <h2>経費管理のコツ</h2>
+  <ol>
+    <li><strong>領収書・レシートを必ず保存</strong>する（7年間）</li>
+    <li>レシートの裏に<strong>目的・相手の名前</strong>をメモする</li>
+    <li>事業用クレジットカードを作り、プライベートと分ける</li>
+    <li>クラウド会計ソフトでリアルタイムに記帳する</li>
+    <li>按分計算は一貫した基準で毎年同じ方法を使う</li>
+  </ol>
+
+  <div class="bg-green-50 border border-green-200 rounded-xl p-4 my-6">
+    <p class="text-green-800 font-medium">✅ 判断に迷ったら</p>
+    <p class="text-green-700 text-sm mt-1">
+      「経費判定チェックリスト」では、よくある費用項目をカテゴリ別に○△×で確認できます。
+      判断根拠と按分率の目安も確認できます。
+    </p>
+  </div>
+</BlogLayout>

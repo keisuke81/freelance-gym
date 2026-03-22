@@ -1,0 +1,94 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="フリーランスの税金入門｜所得税・住民税・国保の基本"
+  description="会社員と違い、フリーランスは自分で税金を計算・納付する必要があります。基本的な仕組みをわかりやすく解説。"
+  date="2026-03-18"
+  tags={['税金', '確定申告', '所得税', '住民税']}
+  relatedTool={{ name: '手取り・税金シミュレーター', href: '/tools/tax-simulator/' }}
+>
+  <h2>フリーランスが払う税金・社会保険料の種類</h2>
+  <p>フリーランスには主に以下の税金・社会保険料がかかります：</p>
+  <ul>
+    <li><strong>所得税</strong>：所得に応じた累進課税（5〜45%）</li>
+    <li><strong>住民税</strong>：所得の約10%（翌年納付）</li>
+    <li><strong>国民健康保険料</strong>：前年所得をもとに計算</li>
+    <li><strong>国民年金</strong>：月額約17,000円（定額）</li>
+    <li><strong>個人事業税</strong>：所得290万超の場合、超過分の5%</li>
+  </ul>
+
+  <h2>所得税の計算の仕組み</h2>
+  <p>所得税は「課税所得」に対して計算されます。</p>
+  <pre class="bg-gray-100 rounded-lg p-4 text-sm overflow-x-auto"><code>売上 - 経費 = 所得
+所得 - 各種控除 = 課税所得
+課税所得 × 税率 - 控除額 = 所得税額</code></pre>
+
+  <h3>主な控除の種類</h3>
+  <ul>
+    <li><strong>基礎控除</strong>：48万円（誰でも適用）</li>
+    <li><strong>青色申告特別控除</strong>：最大65万円（青色申告者）</li>
+    <li><strong>社会保険料控除</strong>：国民健康保険料 + 国民年金の全額</li>
+    <li><strong>配偶者控除</strong>：38万円</li>
+    <li><strong>iDeCo</strong>：掛金全額が所得控除</li>
+    <li><strong>小規模企業共済</strong>：掛金全額が所得控除（月最大7万円）</li>
+  </ul>
+
+  <h2>青色申告と白色申告の違い</h2>
+  <p>
+    青色申告は、複式簿記で記帳することで最大65万円の特別控除が受けられます。
+    節税効果が大きく、フリーランスなら青色申告をおすすめします。
+  </p>
+
+  <table class="w-full border-collapse text-sm my-4">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-300 px-4 py-2 text-left">項目</th>
+        <th class="border border-gray-300 px-4 py-2 text-center">青色（65万控除）</th>
+        <th class="border border-gray-300 px-4 py-2 text-center">白色</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">特別控除</td>
+        <td class="border border-gray-300 px-4 py-2 text-center text-green-700 font-medium">65万円</td>
+        <td class="border border-gray-300 px-4 py-2 text-center text-red-600">なし</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">記帳方法</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">複式簿記</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">単式簿記でも可</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">手間</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">やや多い</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">少ない</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>税金の納付スケジュール</h2>
+  <ul>
+    <li><strong>確定申告</strong>：翌年2月16日〜3月15日に申告・納付</li>
+    <li><strong>予定納税</strong>：前年の税額が一定以上の場合、7月・11月に分割前払い</li>
+    <li><strong>住民税</strong>：6月〜翌年5月（4分割 or 一括）</li>
+    <li><strong>国民健康保険料</strong>：6月〜翌年3月（最大10回）</li>
+  </ul>
+
+  <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-4 my-6">
+    <p class="text-indigo-800 font-medium">💡 手取り額を計算してみよう</p>
+    <p class="text-indigo-700 text-sm mt-1">
+      税金シミュレーターに年間売上を入力するだけで、あなたの手取り額と税負担率を自動計算できます。
+    </p>
+  </div>
+
+  <h2>節税のポイント</h2>
+  <ol>
+    <li><strong>青色申告</strong>にして65万円控除を受ける</li>
+    <li><strong>iDeCo</strong>（個人型確定拠出年金）で老後資産を積みながら節税</li>
+    <li><strong>小規模企業共済</strong>でフリーランスの退職金を準備＆節税</li>
+    <li>経費を正確に把握して所得を正しく計算する</li>
+    <li>家賃・通信費など按分できる費用は適切に経費計上する</li>
+  </ol>
+</BlogLayout>
