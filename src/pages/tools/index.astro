@@ -1,25 +1,50 @@
 ---
+export const prerender = true;
 import BaseLayout from '../../components/layout/BaseLayout.astro';
 import ToolCard from '../../components/ui/ToolCard.astro';
 
-const tools = [
+const toolsA = [
+  {
+    title: '提案文AIジェネレーター',
+    description: '案件情報を貼るだけでAIが300〜500文字の提案文を自動生成。トーン（丁寧/カジュアル/熱意）も選択可能。',
+    href: '/tools/proposal-writer/',
+    emoji: '⚡',
+    badge: 'AI',
+  },
+  {
+    title: 'フリーランス単価診断',
+    description: '職種・経験年数・スキルを入力するだけで適正時間単価レンジと市場ポジションを診断。スキル別の単価効果も表示。',
+    href: '/tools/rate-checker/',
+    emoji: '📊',
+    badge: '無料',
+  },
+  {
+    title: 'クライアントワークテンプレート集',
+    description: '要件確認シート・見積書・契約前チェックリスト・納品メール・追加作業交渉メールの5テンプレートを収録。',
+    href: '/tools/client-templates/',
+    emoji: '📝',
+    badge: '無料',
+  },
+];
+
+const toolsB = [
   {
     title: '請求書ジェネレーター',
-    description: 'フォームを入力するだけでインボイス制度対応の請求書を作成・PDF保存。銀行情報や登録番号にも対応。',
+    description: 'インボイス制度対応の請求書をPDF生成。銀行情報・登録番号にも対応。データはブラウザ内のみ。',
     href: '/tools/invoice/',
     emoji: '📄',
     badge: '無料',
   },
   {
     title: '手取り・税金シミュレーター',
-    description: '年間売上・経費・青色申告の有無などを入力するだけで、所得税・住民税・国保・年金・手取り額をリアルタイム計算。',
+    description: '年間売上・経費率・青色申告の有無などを入力するだけで手取り額と税負担をリアルタイム計算。円グラフ付き。',
     href: '/tools/tax-simulator/',
     emoji: '💰',
     badge: '無料',
   },
   {
     title: '経費判定チェックリスト',
-    description: '「これって経費にできる？」をカテゴリ別に○△×で即判定。按分率の目安と根拠も表示します。',
+    description: '「これって経費にできる？」をカテゴリ別に○△×で即判定。按分率の目安と判断根拠も表示。',
     href: '/tools/expense-checker/',
     emoji: '✅',
     badge: '無料',
@@ -29,17 +54,40 @@ const tools = [
 
 <BaseLayout
   title="フリーランス向け無料ツール一覧｜フリーランスジム"
-  description="フリーランス・個人事業主のための無料ツール集。請求書作成、税金シミュレーター、経費判定など、面倒な実務を秒で解決します。"
+  description="フリーランス・個人事業主のための無料ツール集。提案文AI、単価診断、請求書、税金シミュレーターなど6種のツールを提供しています。"
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="text-center mb-10">
+    <div class="text-center mb-12">
       <h1 class="text-3xl font-extrabold text-gray-900 mb-3">無料ツール一覧</h1>
       <p class="text-gray-500">会員登録不要・データはサーバーに送信されません</p>
     </div>
-    <div class="space-y-4">
-      {tools.map(tool => (
-        <ToolCard {...tool} />
-      ))}
+
+    <div class="mb-10">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-xl">🔥</span>
+        <h2 class="text-lg font-bold text-gray-900">案件獲得・クライアントワーク</h2>
+      </div>
+      <div class="space-y-3">
+        {toolsA.map(tool => <ToolCard {...tool} />)}
+      </div>
+    </div>
+
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-xl">🧾</span>
+        <h2 class="text-lg font-bold text-gray-900">税務・事務</h2>
+      </div>
+      <div class="space-y-3">
+        {toolsB.map(tool => <ToolCard {...tool} />)}
+      </div>
+    </div>
+
+    <div class="mt-12 bg-indigo-900 rounded-2xl p-6 text-white text-center">
+      <p class="text-lg font-bold mb-1">💾 全6ツールをオフラインで使いたい方へ</p>
+      <p class="text-indigo-300 text-sm mb-4">ダウンロード版（¥5,000・買い切り）でインターネット不要・回数制限なしで使えます</p>
+      <a href="/download/" class="inline-block bg-white text-indigo-700 font-bold px-6 py-2.5 rounded-xl hover:bg-indigo-50 transition-colors">
+        詳しく見る →
+      </a>
     </div>
   </div>
 </BaseLayout>

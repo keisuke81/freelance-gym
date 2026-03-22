@@ -12,10 +12,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
     "@astrojs/react": "^5.0.1",
+    "@astrojs/vercel": "^10.0.2",
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.37.0",
     "astro": "^6.0.8",
     "jspdf": "^4.2.1",
     "jspdf-autotable": "^5.0.7",

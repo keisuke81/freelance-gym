@@ -1,13 +1,38 @@
 ---
+export const prerender = true;
 import BaseLayout from '../components/layout/BaseLayout.astro';
 import ToolCard from '../components/ui/ToolCard.astro';
 import BlogCard from '../components/ui/BlogCard.astro';
 import JsonLd from '../components/seo/JsonLd.astro';
 
-const tools = [
+const toolsA = [
+  {
+    title: '提案文AIジェネレーター',
+    description: '案件情報を貼るだけで300〜500文字の提案文をAIが自動生成。クラウドソーシング・直営業に対応。',
+    href: '/tools/proposal-writer/',
+    emoji: '⚡',
+    badge: 'AI',
+  },
+  {
+    title: 'フリーランス単価診断',
+    description: '職種・経験年数・スキルを入力するだけで適正時間単価レンジと市場ポジションを診断。',
+    href: '/tools/rate-checker/',
+    emoji: '📊',
+    badge: '無料',
+  },
+  {
+    title: 'クライアントワークテンプレート集',
+    description: '要件確認シート・見積書・契約前チェックリスト・納品メールなど5種のテンプレートを収録。',
+    href: '/tools/client-templates/',
+    emoji: '📝',
+    badge: '無料',
+  },
+];
+
+const toolsB = [
   {
     title: '請求書ジェネレーター',
-    description: 'フォームを入力するだけでインボイス対応の請求書をPDF生成。会員登録不要。',
+    description: 'インボイス制度対応の請求書をPDF生成。会員登録不要・データはブラウザ内のみ。',
     href: '/tools/invoice/',
     emoji: '📄',
     badge: '無料',
@@ -31,21 +56,21 @@ const tools = [
 const recentPosts = [
   {
     title: 'インボイス制度対応の請求書の書き方【2026年最新】',
-    description: '2023年10月から始まったインボイス制度。適格請求書の書き方と、登録が必要かどうかの判断基準を解説します。',
+    description: '適格請求書の書き方と、インボイス登録が必要かどうかの判断基準を解説します。',
     href: '/blog/invoice-guide/',
     date: '2026-03-20',
     tags: ['請求書', 'インボイス'],
   },
   {
     title: 'フリーランスの税金入門｜所得税・住民税・国保の基本',
-    description: '会社員と違い、フリーランスは自分で税金を計算・納付する必要があります。基本的な仕組みをわかりやすく解説。',
+    description: 'フリーランスが払う税金・社会保険料の種類と計算の仕組みをわかりやすく解説。',
     href: '/blog/tax-basics/',
     date: '2026-03-18',
     tags: ['税金', '確定申告'],
   },
   {
     title: '経費で落とせるもの・落とせないもの完全版',
-    description: 'フリーランスが経費として計上できる費用の一覧と、判断が難しいグレーゾーンの考え方を解説します。',
+    description: 'フリーランスが経費として計上できる費用と判断が難しいグレーゾーンを解説します。',
     href: '/blog/expense-tips/',
     date: '2026-03-15',
     tags: ['経費', '節税'],
@@ -54,15 +79,15 @@ const recentPosts = [
 ---
 
 <BaseLayout
-  title="フリーランスジム｜フリーランスの「困った」を、秒で解決"
-  description="フリーランス・個人事業主のための無料ツール集。請求書ジェネレーター、手取り税金シミュレーター、経費判定チェックリストを提供。会員登録不要で今すぐ使えます。"
+  title="フリーランスジム｜案件獲得をAIでブーストする"
+  description="フリーランス・個人事業主のための無料ツール集。提案文AI・単価診断・請求書・税金シミュレーターなど6ツールを提供。会員登録不要。"
 >
   <JsonLd
     type="WebSite"
     data={{
       name: 'フリーランスジム',
       url: 'https://freelance.kolomua.com',
-      description: 'フリーランスの「困った」を、秒で解決。',
+      description: 'フリーランスの「仕事を取る」を、AIでブーストする。',
     }}
   />
 
@@ -71,68 +96,89 @@ const recentPosts = [
     <div class="max-w-4xl mx-auto text-center">
       <div class="text-6xl mb-6">💪</div>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
-        フリーランスの「困った」を、<br class="hidden sm:block" />秒で解決。
+        案件獲得を、AIでブーストしよう。
       </h1>
       <p class="text-indigo-100 text-lg sm:text-xl leading-relaxed mb-8">
-        請求書・税金・経費...<br class="sm:hidden" />
-        全部、無料ツールでサクッと片付けよう。
+        提案文AI・単価診断・請求書・税金シミュレーター...<br class="hidden sm:block" />
+        フリーランスの実務を無料ツールで支援します。
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a
-          href="/tools/"
-          class="bg-white text-indigo-700 font-bold px-8 py-3 rounded-xl hover:bg-indigo-50 transition-colors"
-        >
-          ツールを使う →
+        <a href="/tools/" class="bg-white text-indigo-700 font-bold px-8 py-3 rounded-xl hover:bg-indigo-50 transition-colors">
+          ツールを使ってみる →
         </a>
-        <a
-          href="/blog/"
-          class="border border-white/50 text-white font-medium px-8 py-3 rounded-xl hover:bg-white/10 transition-colors"
-        >
-          ブログを読む
+        <a href="/download/" class="border border-white/50 text-white font-medium px-8 py-3 rounded-xl hover:bg-white/10 transition-colors">
+          💾 オフライン版を購入（¥5,000）
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ツール一覧 -->
+  <!-- 案件獲得ツール -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="text-center mb-10">
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">人気ツール</h2>
-      <p class="text-gray-500 mt-2">会員登録不要・完全無料で今すぐ使えます</p>
+    <div class="mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-2xl">🔥</span>
+        <h2 class="text-2xl font-extrabold text-gray-900">案件獲得・クライアントワーク</h2>
+      </div>
+      <p class="text-gray-500 text-sm ml-9">提案・単価・クライアント対応をサポート</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {tools.map(tool => (
-        <ToolCard {...tool} />
-      ))}
+      {toolsA.map(tool => <ToolCard {...tool} />)}
+    </div>
+  </section>
+
+  <!-- 税務・事務ツール -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-2xl">🧾</span>
+          <h2 class="text-2xl font-extrabold text-gray-900">税務・事務</h2>
+        </div>
+        <p class="text-gray-500 text-sm ml-9">請求書・税金・経費の面倒な実務をサクッと片付ける</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {toolsB.map(tool => <ToolCard {...tool} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ダウンロード版 CTA -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-gradient-to-r from-indigo-900 to-purple-900 rounded-2xl p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-2xl">💾</span>
+          <h2 class="text-xl font-extrabold">ダウンロード版（全6ツール）</h2>
+        </div>
+        <p class="text-indigo-200 text-sm leading-relaxed">
+          オフラインで使える・回数制限なし・データはあなたのPCのみ<br />
+          提案文AIは自分のAPIキーで無制限に利用可能
+        </p>
+      </div>
+      <div class="flex-shrink-0 text-center">
+        <p class="text-3xl font-extrabold mb-1">¥5,000</p>
+        <p class="text-indigo-300 text-xs mb-3">税込・買い切り</p>
+        <a
+          href="/download/"
+          class="inline-block bg-white text-indigo-700 font-bold px-6 py-2.5 rounded-xl hover:bg-indigo-50 transition-colors"
+        >
+          詳しく見る →
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- 新着記事 -->
   <section class="bg-white py-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between mb-10">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">新着記事</h2>
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-extrabold text-gray-900">新着記事</h2>
         <a href="/blog/" class="text-indigo-600 hover:underline text-sm font-medium">すべて見る →</a>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {recentPosts.map(post => (
-          <BlogCard {...post} />
-        ))}
+        {recentPosts.map(post => <BlogCard {...post} />)}
       </div>
-    </div>
-  </section>
-
-  <!-- CTAバナー -->
-  <section class="bg-indigo-50 py-12 px-4">
-    <div class="max-w-2xl mx-auto text-center">
-      <p class="text-lg font-bold text-indigo-900 mb-2">まずは手取りを計算してみよう</p>
-      <p class="text-indigo-700 text-sm mb-6">年間売上を入力するだけで、税金・社会保険料・手取り額を自動計算します。</p>
-      <a
-        href="/tools/tax-simulator/"
-        class="inline-block bg-indigo-600 text-white font-bold px-8 py-3 rounded-xl hover:bg-indigo-700 transition-colors"
-      >
-        税金シミュレーターを使う →
-      </a>
     </div>
   </section>
 </BaseLayout>

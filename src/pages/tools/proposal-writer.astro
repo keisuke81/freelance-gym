@@ -1,0 +1,18 @@
+---
+export const prerender = false;
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import ProposalWriter from '../../components/tools/ProposalWriter';
+
+const relatedArticles = [
+  { title: 'クラウドソーシングで採用される提案文の書き方', href: '/blog/invoice-guide/' },
+];
+---
+
+<ToolLayout
+  title="提案文AIジェネレーター"
+  description="案件情報を貼るだけでAIが提案文を自動生成。クラウドソーシングや直営業で使えます"
+  toolName="提案文AIジェネレーター"
+  relatedArticles={relatedArticles}
+>
+  <ProposalWriter client:load />
+</ToolLayout>

@@ -1,0 +1,18 @@
+---
+export const prerender = true;
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import ClientTemplates from '../../components/tools/ClientTemplates';
+
+const relatedArticles = [
+  { title: '経費で落とせるもの・落とせないもの完全版', href: '/blog/expense-tips/' },
+];
+---
+
+<ToolLayout
+  title="クライアントワークテンプレート集"
+  description="要件確認シート・見積書・契約前チェックリスト・納品メールなど、フリーランスの必須テンプレートを網羅"
+  toolName="クライアントワークテンプレート集"
+  relatedArticles={relatedArticles}
+>
+  <ClientTemplates client:load />
+</ToolLayout>

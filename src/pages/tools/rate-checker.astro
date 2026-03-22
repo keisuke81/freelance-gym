@@ -1,0 +1,18 @@
+---
+export const prerender = true;
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import RateChecker from '../../components/tools/RateChecker';
+
+const relatedArticles = [
+  { title: 'フリーランスの税金入門｜所得税・住民税・国保の基本', href: '/blog/tax-basics/' },
+];
+---
+
+<ToolLayout
+  title="フリーランス単価診断"
+  description="スキル・経験年数・職種を入力するだけで適正時間単価レンジと市場ポジションを診断します"
+  toolName="フリーランス単価診断"
+  relatedArticles={relatedArticles}
+>
+  <RateChecker client:load />
+</ToolLayout>

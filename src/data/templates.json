@@ -1,0 +1,72 @@
+[
+  {
+    "id": "requirements",
+    "title": "要件確認シート",
+    "emoji": "📋",
+    "description": "スコープクリープを防ぐ。受注前に必ず確認すべき項目を網羅。",
+    "fields": [
+      { "id": "projectName", "label": "プロジェクト名・案件名", "type": "text", "placeholder": "○○サイトリニューアル" },
+      { "id": "client", "label": "クライアント名", "type": "text", "placeholder": "株式会社○○" },
+      { "id": "deliverables", "label": "成果物（具体的に）", "type": "textarea", "placeholder": "・TOPページデザイン（PC/SP）\n・下層ページ5本のデザイン\n・コーディング（HTML/CSS/JS）" },
+      { "id": "outOfScope", "label": "対象外（スコープ外）", "type": "textarea", "placeholder": "・サーバー設定\n・CMS導入\n・修正は3回まで" },
+      { "id": "deadline", "label": "納期", "type": "text", "placeholder": "2026年4月30日" },
+      { "id": "budget", "label": "予算・報酬", "type": "text", "placeholder": "30万円（税込）" },
+      { "id": "paymentTerms", "label": "支払い条件", "type": "text", "placeholder": "納品後30日以内・銀行振込" },
+      { "id": "revisions", "label": "修正回数", "type": "text", "placeholder": "デザイン：2回まで、コーディング：軽微な修正のみ" },
+      { "id": "communication", "label": "連絡手段・頻度", "type": "text", "placeholder": "Slack / 週1回の進捗報告" },
+      { "id": "materials", "label": "クライアントが用意するもの", "type": "textarea", "placeholder": "・テキスト原稿\n・ロゴデータ\n・素材画像" },
+      { "id": "notes", "label": "その他・特記事項", "type": "textarea", "placeholder": "" }
+    ],
+    "outputTemplate": "# 要件確認シート\n\n**プロジェクト**: {{projectName}}\n**クライアント**: {{client}}\n**作成日**: {{date}}\n\n## 成果物\n{{deliverables}}\n\n## スコープ外\n{{outOfScope}}\n\n## 納期\n{{deadline}}\n\n## 報酬・支払い\n- 報酬: {{budget}}\n- 支払い条件: {{paymentTerms}}\n\n## 修正対応\n{{revisions}}\n\n## コミュニケーション\n{{communication}}\n\n## クライアント提供物\n{{materials}}\n\n## 特記事項\n{{notes}}\n\n---\n上記内容でご認識に相違ないかご確認ください。"
+  },
+  {
+    "id": "estimate",
+    "title": "見積書",
+    "emoji": "💴",
+    "description": "作業項目・単価から見積書をPDF出力。",
+    "fields": [
+      { "id": "fromName", "label": "提出者（自分）", "type": "text", "placeholder": "山田 太郎" },
+      { "id": "toName", "label": "提出先（クライアント）", "type": "text", "placeholder": "株式会社○○ 田中様" },
+      { "id": "projectName", "label": "件名", "type": "text", "placeholder": "Webサイト制作の件" },
+      { "id": "validUntil", "label": "見積有効期限", "type": "text", "placeholder": "2026年4月30日" },
+      { "id": "notes", "label": "備考", "type": "textarea", "placeholder": "・別途、サーバー代・ドメイン代は実費精算\n・修正はデザイン2回まで含む" }
+    ],
+    "outputTemplate": ""
+  },
+  {
+    "id": "contract-check",
+    "title": "契約前チェックリスト",
+    "emoji": "✅",
+    "description": "受注判断のための10項目チェック。断るべき案件を見極める。",
+    "fields": [],
+    "outputTemplate": ""
+  },
+  {
+    "id": "delivery-email",
+    "title": "納品メール",
+    "emoji": "📨",
+    "description": "成果物リスト付きの確認依頼メール文。",
+    "fields": [
+      { "id": "clientName", "label": "クライアント名", "type": "text", "placeholder": "田中" },
+      { "id": "projectName", "label": "案件名", "type": "text", "placeholder": "○○サイト制作" },
+      { "id": "deliverables", "label": "納品物リスト", "type": "textarea", "placeholder": "・デザインデータ（Figma URL）\n・コーディング済みHTML/CSS\n・使い方マニュアル（PDF）" },
+      { "id": "confirmationDeadline", "label": "確認期限", "type": "text", "placeholder": "2026年4月30日" },
+      { "id": "yourName", "label": "自分の名前", "type": "text", "placeholder": "山田 太郎" }
+    ],
+    "outputTemplate": "{{clientName}}様\n\nお世話になっております、{{yourName}}です。\n\n「{{projectName}}」の納品をお知らせいたします。\n\n下記の成果物をご確認いただけますでしょうか。\n\n【納品物】\n{{deliverables}}\n\nご不明点や修正のご要望がございましたら、{{confirmationDeadline}}までにご連絡いただけますと幸いです。\n\nよろしくお願いいたします。\n{{yourName}}"
+  },
+  {
+    "id": "scope-creep-email",
+    "title": "追加作業の断り/交渉メール",
+    "emoji": "🛡️",
+    "description": "「それも対応して」に角の立たない断り方・追加費用の伝え方。",
+    "fields": [
+      { "id": "clientName", "label": "クライアント名", "type": "text", "placeholder": "田中" },
+      { "id": "addedRequest", "label": "追加依頼の内容", "type": "textarea", "placeholder": "スマホ対応のコーディングも追加してほしい" },
+      { "id": "additionalFee", "label": "追加費用", "type": "text", "placeholder": "30,000円（税込）" },
+      { "id": "additionalTime", "label": "追加納期", "type": "text", "placeholder": "3営業日" },
+      { "id": "yourName", "label": "自分の名前", "type": "text", "placeholder": "山田 太郎" }
+    ],
+    "outputTemplate": "{{clientName}}様\n\nお世話になっております、{{yourName}}です。\n\nご要望いただいた「{{addedRequest}}」についてご連絡いたします。\n\n当初のお見積もり・契約範囲には含まれておりませんでしたが、追加作業として対応は可能です。\n\n【追加作業の概要】\n・内容: {{addedRequest}}\n・追加費用: {{additionalFee}}\n・追加納期: 現在の納期より{{additionalTime}}延長\n\nご検討いただき、進めるかどうかをご連絡いただけますでしょうか。\n\nよろしくお願いいたします。\n{{yourName}}"
+  }
+]
