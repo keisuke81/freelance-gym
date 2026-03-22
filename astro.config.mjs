@@ -7,7 +7,7 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   site: 'https://freelance.kolomua.com',
   output: 'static',
-  adapter: vercel(),
+  adapter: vercel({ maxDuration: 30 }),
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()]
