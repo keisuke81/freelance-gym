@@ -326,8 +326,9 @@ export default function InvoiceGenerator() {
 
       <style>{`
         @media print {
-          body > * { display: none !important; }
-          #invoice-preview { display: block !important; position: fixed; top: 0; left: 0; width: 100%; }
+          body * { visibility: hidden; }
+          #invoice-preview, #invoice-preview * { visibility: visible; }
+          #invoice-preview { position: fixed; top: 0; left: 0; width: 100%; padding: 40px; box-sizing: border-box; }
         }
       `}</style>
     </div>
