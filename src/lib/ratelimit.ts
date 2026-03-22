@@ -6,8 +6,8 @@ let ratelimitPerHour: Ratelimit | null = null;
 let ratelimitPerDay: Ratelimit | null = null;
 
 function getRatelimiters() {
-  const url = import.meta.env.KV_REST_API_URL;
-  const token = import.meta.env.KV_REST_API_TOKEN;
+  const url = process.env.KV_REST_API_URL;
+  const token = process.env.KV_REST_API_TOKEN;
 
   if (!url || !token) return null;
 

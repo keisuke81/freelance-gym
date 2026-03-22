@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { anthropic, MODEL, MAX_OUTPUT_TOKENS } from '../../lib/anthropic';
+import { getAnthropicClient, MODEL, MAX_OUTPUT_TOKENS } from '../../lib/anthropic';
 import { checkRateLimit } from '../../lib/ratelimit';
 import { validateProposalInput } from '../../lib/validation';
 
@@ -70,6 +70,7 @@ ${TONE_LABELS[tone]}
 - 提案文のみを出力する（前置き・解説不要）`;
 
   try {
+    const anthropic = getAnthropicClient();
     const message = await anthropic.messages.create({
       model: MODEL,
       max_tokens: MAX_OUTPUT_TOKENS,
